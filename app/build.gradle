@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace 'com.nfc.door'
     compileSdk 34
 
     defaultConfig {
