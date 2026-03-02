@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#0a0a0f">
+
+    <TextView
+        android:text="🔑 NFC Tür"
+        android:textSize="32sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:text="UID: EC 4A 5C 14"
+        android:textSize="14sp"
+        android:textColor="#4f6ef7"
+        android:fontFamily="monospace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"/>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:text="Wird geladen..."
+        android:textSize="16sp"
+        android:textColor="#e8e8f0"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"/>
+
+    <Button
+        android:id="@+id/toggleButton"
+        android:text="Tür öffnen"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        android:backgroundTint="#4f6ef7"
+        android:layout_width="240dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="32dp"/>
+
+</LinearLayout>
