@@ -15,26 +15,28 @@
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="24dp"/>
 
     <TextView
-        android:text="UID: EC 4A 5C 14"
-        android:textSize="14sp"
+        android:id="@+id/cardInfoText"
+        android:text="Aktive UID: EC 4A 5C 14"
+        android:textSize="13sp"
         android:textColor="#4f6ef7"
         android:fontFamily="monospace"
+        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"/>
+        android:layout_marginBottom="24dp"/>
 
     <TextView
         android:id="@+id/statusText"
-        android:text="Wird geladen..."
-        android:textSize="16sp"
+        android:text="✅ Bereit"
+        android:textSize="15sp"
         android:textColor="#e8e8f0"
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"/>
+        android:layout_marginBottom="40dp"/>
 
     <Button
         android:id="@+id/toggleButton"
@@ -42,8 +44,17 @@
         android:textSize="18sp"
         android:textColor="#ffffff"
         android:backgroundTint="#4f6ef7"
-        android:layout_width="240dp"
+        android:layout_width="280dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/scanButton"
+        android:text="📶 Karte scannen"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:backgroundTint="#1a1a28"
+        android:layout_width="280dp"
+        android:layout_height="56dp"/>
 
 </LinearLayout>
