@@ -8,7 +8,8 @@ public class HCEService extends HostApduService {
 
     private static final String TAG = "HCEService";
 
-    private static final byte[] UID = {
+    // Statische UID — kann zur Laufzeit aktualisiert werden
+    private static byte[] UID = {
         (byte)0xEC, (byte)0x4A, (byte)0x5C, (byte)0x14
     };
 
@@ -27,26 +28,29 @@ public class HCEService extends HostApduService {
         (byte)0x00, (byte)0x00
     };
 
+    // UID von außen aktualisieren
+    public static void updateUID(byte[] newUID) {
+        UID = newUID;
+        Log.d("HCEService", "UID aktualisiert: " + bytesToHexStatic(newUID));
+    }
+
     @Override
     public byte[] processCommandApdu(byte[] apdu, Bundle extras) {
-        Log.d(TAG, "APDU: " + bytesToHex(apdu));
+        Log.d(TAG, "APDU: " + bytesToHexStatic(apdu));
 
         if (apdu == null || apdu.length < 2) {
             return UNKNOWN_CMD;
         }
 
         if (apdu[0] == (byte)0x00 && apdu[1] == (byte)0xA4) {
-            Log.d(TAG, "SELECT");
             return buildUIDResponse();
         }
 
         if (apdu[0] == (byte)0x00 && apdu[1] == (byte)0xB0) {
-            Log.d(TAG, "READ");
             return buildBlock04Response();
         }
 
         if (apdu[0] == (byte)0xFF && apdu[1] == (byte)0xCA) {
-            Log.d(TAG, "GET UID");
             return buildUIDResponse();
         }
 
@@ -69,7 +73,7 @@ public class HCEService extends HostApduService {
         return response;
     }
 
-    private String bytesToHex(byte[] bytes) {
+    private static String bytesToHexStatic(byte[] bytes) {
         if (bytes == null) return "";
         StringBuilder sb = new StringBuilder();
         for (byte b : bytes) {
